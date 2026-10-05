@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario de contacto del sitio F1 al Día para enviar sugerencias y consultas.">
+    <meta name="author" content="Aficionados a la F1">
+    <title>F1 - Contacto</title>
+    <!-- Hoja de estilos única para todo el sitio (ruta relativa) -->
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" href="imagenes/logo-formula1.png" type="image/png">
+</head>
+<body>
+
+    <!-- ==================== CABECERA ==================== -->
+    <header class="cabecera">
+        <img src="imagenes/logo-formula1.png"
+             alt="Logotipo de F1 al Día con un monoplaza en rojo"
+             class="logo">
+        <h1>Gran Premio de España 2027</h1>
+        <p class="lema">Contacto</p>
+    </header>
+
+    <!-- ==================== MENÚ DE NAVEGACIÓN ====================
+         En esta página el enlace activo es "Contacto". -->
+    <nav class="menu">
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="escuderias.html">Escuderías y Pilotos</a></li>
+            <li><a href="contacto.html" class="activo">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- ==================== CONTENIDO PRINCIPAL ====================
+         Esta página contiene un formulario de contacto que utiliza
+         el protocolo "mailto:" para enviar los datos por correo
+         electrónico, además de información de interés y enlaces. -->
+    <main>
+
+        <!-- Sección introductoria -->
+        <section>
+            <h2>Contacta con nosotros</h2>
+
+            <figure>
+                <img src="imagenes/contacto.jpg"
+                     alt="Monoplaza de Ferrari en el circuito de Mónaco">
+                <figcaption>Comparte con nosotros tu pasión por la Fórmula 1.</figcaption>
+            </figure>
+
+            <p>
+                ¿Tienes alguna sugerencia, corrección o quieres compartir tu opinión
+                sobre el mundo de la Fórmula 1? rellena el siguiente formulario y envíanos tu mensaje. Te responderemos lo antes posible.
+            </p>
+
+        </section>
+
+        <!-- ==================== FORMULARIO DE CONTACTO ====================
+             Utiliza el atributo action con "mailto:" para que al pulsar
+             el botón Enviar se abra el cliente de correo del usuario.
+             Los campos están agrupados con fieldset y alineados con
+             las clases definidas en el CSS. -->
+        <section>
+            <h2>Formulario de contacto</h2>
+
+            <form action="mailto:info@f1aldia.com?subject=Contacto%20F1%20al%20D%C3%ADa"
+                  method="post"
+                  enctype="text/plain"
+                  class="formulario">
+
+                <fieldset>
+                    <legend>Datos personales</legend>
+
+                    <div class="fila">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text"
+                               id="nombre"
+                               name="nombre"
+                               placeholder="Ej. Juan Pérez"
+                               required
+                               maxlength="50">
+                    </div>
+
+                    <div class="fila">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="usuario@dominio.com"
+                               required>
+                    </div>
+
+                    <div class="fila">
+                        <label for="telefono">Teléfono (opcional):</label>
+                        <input type="tel"
+                               id="telefono"
+                               name="telefono"
+                               placeholder="+34 600 000 000"
+                               pattern="[+0-9 ]{7,15}">
+                    </div>
+
+                    <div class="fila">
+                        <label for="edad">Edad:</label>
+                        <input type="number"
+                               id="edad"
+                               name="edad"
+                               min="10"
+                               max="99"
+                               placeholder="18">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Motivo de la consulta</legend>
+
+                    <div class="fila">
+                        <label for="asunto">Asunto:</label>
+                        <select id="asunto" name="asunto" required>
+                            <option value="">-- Selecciona una opción --</option>
+                            <option value="sugerencia">Sugerencia de contenido</option>
+                            <option value="correccion">Corrección de errores</option>
+                            <option value="colaboracion">Colaboración</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="fila">
+                        <label for="escuderia_fav">Escudería favorita:</label>
+                        <select id="escuderia_fav" name="escuderia_fav">
+                            <option value="ferrari">Ferrari</option>
+                            <option value="redbull">Red Bull Racing</option>
+                            <option value="mclaren">McLaren</option>
+                            <option value="mercedes">Mercedes</option>
+                            <option value="astonmartin">Aston Martin</option>
+                            <option value="williams">Williams</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </div>
+
+                    <div class="fila">
+                        <label>¿Sigues la F1 habitualmente?</label>
+                        <div class="grupo-radio">
+                            <label>
+                                <input type="radio" name="seguidor" value="si" checked> Sí
+                            </label>
+                            <label>
+                                <input type="radio" name="seguidor" value="no"> No
+                            </label>
+                            <label>
+                                <input type="radio" name="seguidor" value="aveces"> A veces
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="fila">
+                        <label>Preferencias de contacto:</label>
+                        <div class="grupo-checkbox">
+                            <label>
+                                <input type="checkbox" name="pref_email" value="email" checked>
+                                Por correo electrónico
+                            </label>
+                            <label>
+                                <input type="checkbox" name="pref_newsletter" value="newsletter">
+                                Recibir boletín informativo
+                            </label>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Tu mensaje</legend>
+
+                    <div class="fila">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje"
+                                  name="mensaje"
+                                  rows="6"
+                                  cols="40"
+                                  placeholder="Escribe aquí tu consulta..."
+                                  required
+                                  maxlength="500"></textarea>
+                    </div>
+
+                    <div class="fila">
+                        <label for="fichero">Adjuntar archivo (opcional):</label>
+                        <input type="file" id="fichero" name="fichero">
+                    </div>
+                </fieldset>
+
+                <div class="fila botones">
+                    <input type="submit" value="Enviar mensaje">
+                    <input type="reset" value="Limpiar formulario">
+                </div>
+            </form>
+        </section>
+
+        <!-- Sección con datos de contacto directo -->
+        <section>
+            <h2>Otras vías de contacto</h2>
+            <ul class="lista">
+                <li>Correo: <a href="mailto:info@birt.com">info@birt.com</a></li>
+                <li>Teléfono: +34 120 123 456 (L-V, 9:00 a 18:00 h)</li>
+                <li>Dirección: Avenida del Motor, 1 – 01002 Vitoria</li>
+            </ul>
+
+
+        </section>
+
+        <!-- Enlaces externos relacionados -->
+        <section>
+            <h2>Enlaces externos de interés</h2>
+            <ul class="lista">
+                <li>
+                    <a href="https://www.formula1.com/en/latest" target="_blank" rel="noopener">
+                        Últimas noticias en Formula1.com
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.fia.com" target="_blank" rel="noopener">
+                        FIA – Reglamentos y comunicados oficiales
+                    </a>
+                </li>
+                <li>
+                    <a href="https://es.motorsport.com/f1/" target="_blank" rel="noopener">
+                        Motorsport España
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <aside>
+            <h2>Aviso importante</h2>
+            <p>
+                Este formulario abre tu cliente de correo habitual. Asegúrate de
+                tener uno configurado correctamente antes de pulsar "Enviar mensaje".
+            </p>
+        </aside>
+
+    </main>
+
+    <!-- ==================== PIE DE PÁGINA ==================== -->
+    <footer class="pie">
+        <p>
+            arico &copy; 2026 – Sitio web divulgativo sin ánimo de
+            lucro creado por Alejandro Rico González
+        </p>
+        <p>
+            <a href="index.html">Inicio</a> |
+            <a href="escuderias.html">Escuderías y Pilotos</a> |
+            <a href="contacto.html">Contacto</a>
+        </p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+/* =========================================================
+   HOJA DE ESTILOS
+   Se aplica a index.html, escuderias.html y contacto.html
+   ========================================================= */
+
+/* -------------------- RESET Y BASE -------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    color: #222;
+    line-height: 1.6;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* -------------------- CABECERA -------------------- */
+.cabecera {
+    background: linear-gradient(135deg, #d40000, #8b0000);
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.cabecera .logo {
+    height: 80px;
+    width: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.cabecera h1 {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.cabecera .lema {
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* -------------------- MENÚ DE NAVEGACIÓN -------------------- */
+.menu {
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu li {
+    margin: 0;
+}
+
+.menu a {
+    display: block;
+    padding: 0.9rem 1.6rem;
+    color: #eee;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.menu a:hover {
+    background-color: #d40000;
+    color: #fff;
+}
+
+.menu a.activo {
+    background-color: #d40000;
+    color: #fff;
+    border-radius: 8px;
+}
+
+/* -------------------- CONTENIDO PRINCIPAL -------------------- */
+main {
+    display: block;
+}
+
+section {
+    background-color: #fff;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+section h2 {
+    color: #b30000;
+    border-bottom: 3px solid #d40000;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+}
+
+section h3 {
+    color: #333;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+section p {
+    margin-bottom: 0.8rem;
+    text-align: justify;
+}
+
+/* -------------------- IMÁGENES Y FIGURAS -------------------- */
+figure {
+    margin: 1rem auto;
+    text-align: center;
+    max-width: 100%;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.4rem;
+    font-style: italic;
+}
+
+/* Imagen flotante a la derecha en la página de escuderías */
+.imagen-derecha {
+    float: right;
+    width: 38%;
+    margin: 0 0 1rem 1rem;
+}
+
+/* -------------------- LISTAS -------------------- */
+.lista {
+    margin: 0.5rem 0 1rem 1.8rem;
+}
+
+.lista li {
+    margin-bottom: 0.35rem;
+}
+
+/* -------------------- TABLAS -------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
+}
+
+caption {
+    caption-side: top;
+    font-weight: bold;
+    padding-bottom: 0.5rem;
+    color: #b30000;
+    text-align: left;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 0.6rem 0.8rem;
+    text-align: center;
+}
+
+table thead th {
+    background-color: #d40000;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+table tbody tr:hover {
+    background-color: #ffe6e6;
+}
+
+/* -------------------- BARRA LATERAL (ASIDE) -------------------- */
+aside {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid #d40000;
+}
+
+aside h2 {
+    color: #ff4d4d;
+    border-bottom: 2px solid #d40000;
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.8rem;
+}
+
+aside .lista li {
+    color: #f0f0f0;
+}
+
+/* -------------------- FORMULARIO DE CONTACTO -------------------- */
+.formulario {
+    background-color: #fafafa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.formulario fieldset {
+    border: 1px solid #d40000;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.2rem;
+    background-color: #fff;
+}
+
+.formulario legend {
+    font-weight: bold;
+    color: #b30000;
+    padding: 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+/* Alineación perfecta con grid: etiqueta a la izquierda, campo a la derecha */
+.fila {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+}
+
+.fila > label {
+    font-weight: bold;
+    color: #333;
+    text-align: right;
+    padding-right: 0.5rem;
+}
+
+.fila input[type="text"],
+.fila input[type="email"],
+.fila input[type="tel"],
+.fila input[type="number"],
+.fila select,
+.fila textarea,
+.fila input[type="file"] {
+    width: 100%;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    background-color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.fila input:focus,
+.fila select:focus,
+.fila textarea:focus {
+    border-color: #d40000;
+    outline: none;
+    box-shadow: 0 0 6px rgba(212, 0, 0, 0.4);
+}
+
+.fila textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Grupos de radios y checkboxes alineados en línea */
+.grupo-radio,
+.grupo-checkbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.grupo-radio label,
+.grupo-checkbox label {
+    font-weight: normal;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Fila de botones centrada */
+.fila.botones {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.fila.botones input[type="submit"],
+.fila.botones input[type="reset"] {
+    padding: 0.7rem 2rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.fila.botones input[type="submit"] {
+    background-color: #d40000;
+    color: #fff;
+}
+
+.fila.botones input[type="submit"]:hover {
+    background-color: #a30000;
+    transform: translateY(-2px);
+}
+
+.fila.botones input[type="reset"] {
+    background-color: #555;
+    color: #fff;
+}
+
+.fila.botones input[type="reset"]:hover {
+    background-color: #333;
+    transform: translateY(-2px);
+}
+
+/* -------------------- PIE DE PÁGINA -------------------- */
+.pie {
+    background-color: #1a1a1a;
+    color: #ddd;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    border-radius: 10px 10px 0 0;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.pie a {
+    color: #ff4d4d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pie a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------- ENLACES GENERALES -------------------- */
+main a {
+    color: #b30000;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main a:hover {
+    text-decoration: underline;
+    color: #d40000;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 700px) {
+    .cabecera h1 {
+        font-size: 1.6rem;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu a {
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .imagen-derecha {
+        float: none;
+        width: 100%;
+        margin: 0 auto 1rem auto;
+    }
+
+    /* Formulario en una sola columna en pantallas pequeñas */
+    .fila {
+        grid-template-columns: 1fr;
+    }
+
+    .fila > label {
+        text-align: left;
+        padding-right: 0;
+    }
+
+    .fila.botones {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
