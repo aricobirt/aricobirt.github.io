@@ -1,6 +1,8 @@
 /* =========================================================
    HOJA DE ESTILOS
    Se aplica a index.html, escuderias.html y contacto.html
+   Diseño fluido: el contenido ocupa el 100% del ancho
+   de la pantalla (escritorio y móvil).
    ========================================================= */
 
 /* -------------------- RESET Y BASE -------------------- */
@@ -12,6 +14,7 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 body {
@@ -19,9 +22,13 @@ body {
     background-color: #f2f2f2;
     color: #222;
     line-height: 1.6;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    /* Ocupa todo el ancho disponible, sin límite máximo */
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    /* Margen lateral fluido: pequeño en móvil, mayor en pantallas grandes */
+    padding: 0 clamp(0.5rem, 2.5vw, 3rem);
+    overflow-x: hidden;
 }
 
 /* -------------------- CABECERA -------------------- */
@@ -36,21 +43,21 @@ body {
 }
 
 .cabecera .logo {
-    height: 80px;
+    height: clamp(60px, 8vw, 90px);
     width: auto;
     display: block;
     margin: 0 auto 0.5rem auto;
 }
 
 .cabecera h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.4rem, 3.2vw, 2.4rem);
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 .cabecera .lema {
     font-style: italic;
-    font-size: 1rem;
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
     opacity: 0.9;
 }
 
@@ -97,14 +104,16 @@ body {
 /* -------------------- CONTENIDO PRINCIPAL -------------------- */
 main {
     display: block;
+    width: 100%;
 }
 
 section {
     background-color: #fff;
-    padding: 1.5rem;
+    padding: clamp(1rem, 2vw, 2rem);
     margin-bottom: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    width: 100%;
 }
 
 section h2 {
@@ -122,7 +131,12 @@ section h3 {
 
 section p {
     margin-bottom: 0.8rem;
-    text-align: justify;
+    text-align: left;
+}
+
+/* Bloque con texto + lista + cita (misma sangría que .lista) */
+.bloque-lista {
+    margin: 0.5rem 0 1rem 1.8rem;
 }
 
 /* -------------------- IMÁGENES Y FIGURAS -------------------- */
@@ -146,6 +160,27 @@ figcaption {
     color: #555;
     margin-top: 0.4rem;
     font-style: italic;
+}
+
+/* Crédito de la fuente de la imagen (Unsplash) */
+figcaption .credito {
+    display: block;
+    margin-top: 0.25rem;
+    font-size: 0.78rem;
+    font-style: normal;
+    color: #777;
+    letter-spacing: 0.3px;
+}
+
+figcaption .credito a {
+    color: #b30000;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+figcaption .credito a:hover {
+    text-decoration: underline;
+    color: #d40000;
 }
 
 /* Imagen flotante a la derecha en la página de escuderías */
@@ -210,6 +245,7 @@ aside {
     border-radius: 10px;
     margin-bottom: 1.5rem;
     border-left: 6px solid #d40000;
+    width: 100%;
 }
 
 aside h2 {
@@ -226,9 +262,10 @@ aside .lista li {
 /* -------------------- FORMULARIO DE CONTACTO -------------------- */
 .formulario {
     background-color: #fafafa;
-    padding: 1.5rem;
+    padding: clamp(0.8rem, 2vw, 1.5rem);
     border-radius: 10px;
     border: 1px solid #e0e0e0;
+    width: 100%;
 }
 
 .formulario fieldset {
@@ -246,12 +283,12 @@ aside .lista li {
     font-size: 1.05rem;
 }
 
-/* Alineación perfecta con grid: etiqueta a la izquierda, campo a la derecha */
+/* Alineación con grid fluido: etiqueta a la izquierda, campo a la derecha */
 .fila {
     display: grid;
-    grid-template-columns: 220px 1fr;
+    grid-template-columns: minmax(150px, 220px) 1fr;
     align-items: center;
-    gap: 1rem;
+    gap: clamp(0.5rem, 1.5vw, 1.2rem);
     margin-bottom: 0.9rem;
 }
 
@@ -355,6 +392,7 @@ aside .lista li {
     border-radius: 10px 10px 0 0;
     font-size: 0.9rem;
     margin-top: 1rem;
+    width: 100%;
 }
 
 .pie a {
@@ -381,8 +419,13 @@ main a:hover {
 
 /* -------------------- RESPONSIVE -------------------- */
 @media (max-width: 700px) {
-    .cabecera h1 {
-        font-size: 1.6rem;
+    body {
+        /* En móvil el contenido llega prácticamente al borde */
+        padding: 0 0.5rem;
+    }
+
+    .cabecera {
+        border-radius: 0 0 8px 8px;
     }
 
     .menu ul {
@@ -414,5 +457,20 @@ main a:hover {
         flex-direction: column;
         align-items: stretch;
     }
+
+    .bloque-lista {
+        margin-left: 0.5rem;
+    }
 }
 
+/* -------------------- PANTALLAS MUY GRANDES -------------------- */
+@media (min-width: 1600px) {
+    section p,
+    .lista li {
+        font-size: 1.05rem;
+    }
+
+    .fila {
+        grid-template-columns: minmax(180px, 260px) 1fr;
+    }
+}
